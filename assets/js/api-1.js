@@ -1,12 +1,9 @@
-const functionA = function () {
+export const functionA = function () {
     console.log('Hello, from function A!');
 }
 
-const fetchPerson = function (id) {
-    fetch(`https://swapi.dev/api/${id}`).then(function (response) {
-        console.log(response);
-    })
+export const fetchPerson = async function (id) {
+    const response = await fetch(`https://swapi.dev/api/people/${id}`);
+    const person = await response.json();
+    console.log(person);
 }
-
-export default functionA;
-
