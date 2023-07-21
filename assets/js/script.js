@@ -5,5 +5,26 @@ console.log('Hello, world!');
 
 functionA();
 functionB();
-fetchPerson(1).then(function () { console.log('Got a person!')});
-fetchPlanet(1).then(function () { console.log('Got a planet!')});
+
+let people = [];
+let planets = [];
+
+async function getPeople() {
+    for (let i = 0; i < 10; i++) {
+        const person = await fetchPerson(i + 1);
+        people.push(person);
+    }
+}
+
+async function getPlanets() {
+    for (let i = 0; i < 10; i++) {
+        const planet = await fetchPlanet(i + 1);
+        planets.push(planet);
+    }
+}
+
+await getPeople();
+await getPlanets();
+
+console.log(people);
+console.log(planets);
