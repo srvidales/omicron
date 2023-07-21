@@ -10,10 +10,24 @@
     <script type="module" src="assets/js/api-1.js"></script>
     <script type="module" src="assets/js/api-2.js"></script>
     <script>$(function () {
-        $('#content-1').load('./assets/html/content-1.html')
+        $('#intro-div').load('./assets/html/intro.html')
+        $('#universe-div').load('./assets/html/universe.html')
+        $('#characters-div').load('./assets/html/characters.html')
+        $('#locations-div').load('./assets/html/locations.html')
+        $('#settings-div').load('./assets/html/settings.html')
+        $('#playthrough-div').load('./assets/html/playthrough.html')
+        $('#finale-div').load('./assets/html/finale.html')
+        $('#score-div').load('./assets/html/score.html')
     })</script>
 </head>
 <body>
-<div id="content-1"></div>
+<div id="intro-div"></div>
+<div id="universe-div" class="is-hidden"></div>
+<div id="characters-div" class="is-hidden"></div>
+<div id="locations-div" class="is-hidden"></div>
+<div id="settings-div" class="is-hidden"></div>
+<div id="playthrough-div" class="is-hidden"></div>
+<div id="finale-div" class="is-hidden"></div>
+<div id="score-div" class="is-hidden"></div>
 </body>
 </html>
