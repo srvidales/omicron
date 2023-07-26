@@ -6,6 +6,7 @@
 - [Getting Started](#getting-started)
 - [Installing](#installing)
 - [Usage](#usage)
+- [Jira Board](#jira-board)
 - [Screenshot](#screenshot)
 - [Contributing](#contributing)
 
@@ -22,6 +23,9 @@ git clone git@github.com:srvidales/omicron.git
 No installation required.
 
 ## Usage
+
+## Jira Board
+https://ucb-bootcamp.atlassian.net/jira/software/projects/SWS/boards/1
 
 ## Screenshot
 
