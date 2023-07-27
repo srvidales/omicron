@@ -9,57 +9,61 @@ const initCharacterStep = function () {
 };
 
 var nextbtn = document.getElementById("continue-btn");
-var homeWorldLink;
-var speciesLink;
-var birthPlace;
-var speciesType;
-var eyes;
-var gender;
-var hair;
-var height
+// var homeWorldLink;
+// var birthPlace;
+// var eyeColor;
+// var gender;
+// var hairColor;
+// var height;
 
 async function genRandomCharacter() {
   var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   var ranNumber = number[Math.floor(Math.random() * number.length)];
   console.log(ranNumber);
 
-  var requestUrl = "https://swapi.dev/api/people/" + ranNumber;
-  let response = await fetch(requestUrl)
-  let data = await response.json();  
-      homeWorldLink = data.homeworld;
-      speciesLink = data.species;
-      eyes = data.eye_color;
-      gender = data.gender;
-      hair = data.hair_color;
-      height = data.height;
-      console.log(eyes);
-      console.log(data);
-      console.log(gender);
-      console.log(hair);
-      console.log(height);
-      
-      fetchHomeWorld();
-      fetchCharacterSpecies();
+var homeWorldLink;
+var birthPlace;
+var eyeColor;
+var gender;
+var hairColor;
+var height;
 
-};
-async function fetchHomeWorld() {
-  console.log(homeWorldLink);
-  let response = await fetch(homeWorldLink);
+  var requestUrl = "https://swapi.dev/api/people/" + ranNumber;
+  let response = await fetch(requestUrl);
   let data = await response.json();
+  homeWorldLink = data.homeworld;
+  eyeColor = data.eye_color;
+  gender = data.gender;
+  hairColor = data.hair_color;
+  height = data.height;
+  console.log(eyeColor);
   console.log(data);
-  birthPlace = data.name;
-  console.log(birthPlace);
-  return data;
+  console.log(gender);
+  console.log(hairColor);
+  console.log(height);
+
+  async function fetchHomeWorld() {
+    console.log(homeWorldLink);
+    let response = await fetch(homeWorldLink);
+    let data = await response.json();
+    console.log(data);
+    birthPlace = data.name;
+    console.log(birthPlace);
+  
+  }
+
+  fetchHomeWorld();
+  
 }
-async function fetchCharacterSpecies() {
-  console.log(speciesLink);
-  let response = await fetch(speciesLink);
-  let data = await response.json();
-  console.log(data);
-  speciesType = data.name;
-  console.log(speciesType);
-  return data;
-}
+// async function fetchHomeWorld() {
+//   console.log(homeWorldLink);
+//   let response = await fetch(homeWorldLink);
+//   let data = await response.json();
+//   console.log(data);
+//   birthPlace = data.name;
+//   console.log(birthPlace);
+//   return data;
+// }
 
 
 export { initCharacterStep };
