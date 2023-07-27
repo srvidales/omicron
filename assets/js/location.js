@@ -5,4 +5,5 @@ const initLocationsStep = function () {
     $('#location-div #continue-btn').on('click', nextStep)
 }
 
+
 export {initLocationsStep};
