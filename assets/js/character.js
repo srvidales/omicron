@@ -8,7 +8,6 @@ const initCharacterStep = function () {
   randomCharacterBtn.addEventListener("click", genRandomCharacter);
 };
 
-var nextbtn = document.getElementById("continue-btn");
 // var homeWorldLink;
 // var birthPlace;
 // var eyeColor;
