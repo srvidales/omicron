@@ -1,34 +1,9 @@
 <div class="container">
   <div class="tile is-ancestor is-centered">
     <div class="tile is-vertical is-2"></div>
-
     <div class="tile is-vertical is-8">
-      <div class="tile is-parent mt-5">
-        <article class="tile is-child notification is-black has-text-centered">
-          Banner
-        </article>
-      </div>
-      <nav class="level">
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Home</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Dark Side // Light Side</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Character</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Location</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Playthrough</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link is-info">Finale</a>
-        </p>
-      </nav>
-      <div class="tile is-parent">
+
+      <div class="tile is-parent is-active" id="success">
         <article
           class="tile success is-child notification is-black has-text-centered is-primary is-hidden"
         >
@@ -40,7 +15,7 @@
           </p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="failure">
         <article
           class="tile failure is-child notification is-black has-text-centered is-warning is-hidden"
         >
@@ -88,4 +63,3 @@
     <div class="tile is-vertical is-2"></div>
   </div>
 </div>
->>>>>>> 7f75f8b (HTML changes using Bulma for intro, playthrough, finale)
