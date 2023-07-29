@@ -9,17 +9,43 @@
     <script type="module" src="assets/js/app.js"></script>
 </head>
 <header>
-    <img id="banner-img" src="assets/img/banner/intro-banner.png" alt="intro-banner">
+    <article class="tile is-child notification is-black has-text-centered"> 
+        <!-- Banner will be placed here. Make sure appropriate IDs are used. -->
+        <!-- <img id="" src="" alt="intro-banner"> -->
+    </article>
+        <!-- Need to decide if we can have the fake navigation bar in index. 
+        Should this be a UL with LIs? -->
+    <nav class="level mt-5 mb-2 breadcrumb is-medium" aria-label="breadcrumbs">
+        <p class="level-item has-text-centered is-active">
+          <a class="link is-info" aria-current="page">Home</a>
+        </p>
+        <p class="level-item has-text-centered">
+          <a class="link is-info">Dark Side // Light Side</a>
+        </p>
+        <p class="level-item has-text-centered">
+          <a class="link is-info">Character</a>
+        </p>
+        <p class="level-item has-text-centered">
+          <a class="link is-info">Location</a>
+        </p>
+        <p class="level-item has-text-centered">
+          <a class="link is-info">Playthrough</a>
+        </p>
+        <p class="level-item has-text-centered">
+          <a class="link is-info">Finale</a>
+        </p>
+      </nav>
+
 </header>
 <body class="has-background-grey-dark">
     <main>
-<div id="intro-div"></div>
-<div id="difficulty-div" class="is-hidden"></div>
-<div id="character-div" class="is-hidden"></div>
-<div id="location-div" class="is-hidden"></div>
-<div id="path-div" class="is-hidden"></div>
-<div id="playthrough-div" class="is-hidden"></div>
-<div id="finale-div" class="is-hidden"></div>
+        <div id="intro-div"></div>
+        <div id="difficulty-div" class="is-hidden"></div>
+        <div id="character-div" class="is-hidden"></div>
+        <div id="location-div" class="is-hidden"></div>
+        <div id="path-div" class=""></div>
+        <div id="playthrough-div" class=""></div>
+        <div id="finale-div" class=""></div>
     </main>
 </body>
 </html>
