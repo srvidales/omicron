@@ -14,8 +14,8 @@ import * as finale from './finale.js';
 // Step 6 - Playthrough generated story
 // Step 7 - Finale (Success/Failure)
 
-const steps = ['intro', 'character',
-    'location', 'path', 'playthrough', 'finale']
+const steps = ['intro', 'location', 'character',
+    'path', 'playthrough', 'finale']
 
 let currentStep = 0;
 
@@ -37,16 +37,13 @@ const nextStep = function () {
 
 $(function () {
 
-    const steps = ['intro', 'universe', 'characters',
-        'locations', 'settings', 'playthrough', 'finale', 'score']
-
     let currentStep = 0;
 
     const loadAllSteps = function () {
         $('#intro-div').load('./assets/html/intro.html', intro.initIntroStep)
         // $('#difficulty-div').load('./assets/html/difficulty.html', difficulty.initDifficultyStep)
-        $('#character-div').load('./assets/html/character.html', character.initCharacterStep)
         $('#location-div').load('./assets/html/location.html', location.initLocationsStep)
+        $('#character-div').load('./assets/html/character.html', character.initCharacterStep)
         $('#path-div').load('./assets/html/path.html', path.initPathStep)
         $('#playthrough-div').load('./assets/html/playthrough.html', playthrough.initPlaythroughStep)
         $('#finale-div').load('./assets/html/finale.html', finale.initFinaleStep)
