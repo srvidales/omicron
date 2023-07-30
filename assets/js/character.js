@@ -77,6 +77,7 @@ async function genRandomCharacter() {
 
   fetchHomeWorld();
 }
+
 // async function fetchHomeWorld() {
 //   console.log(homeWorldLink);
 //   let response = await fetch(homeWorldLink);
