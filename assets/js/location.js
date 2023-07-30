@@ -61,7 +61,7 @@ async function getLocation() {
   rotations.textContent = locationArray[5];
 }
 
-function restLoc (){
+function resetLoc (){
   var names = document.getElementById("txt-planetname");
   names.textContent = ""
   var climates = document.getElementById("txt-climate");
