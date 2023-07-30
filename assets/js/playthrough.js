@@ -1,4 +1,5 @@
 import {nextStep} from './app.js';
+let characterName = 'Han Solo'
 
 let chat = {
     "model": "gpt-3.5-turbo",
