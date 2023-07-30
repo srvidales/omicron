@@ -1,12 +1,14 @@
 import { nextStep } from "./app.js";
 
+let characterPath = "light";
+
 const initCharacterStep = function () {
   console.log("Done loading Character step.");
   $("#character-div #continue-btn").on("click", nextStep);
 
   var randomCharacterBtn = document.getElementById("add-character-btn");
   randomCharacterBtn.addEventListener("click", genRandomCharacter);
- 
+
   genRandomCharacter();
 };
 
@@ -18,8 +20,15 @@ const initCharacterStep = function () {
 // var height;
 
 async function genRandomCharacter() {
-  var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-  var ranNumber = number[Math.floor(Math.random() * number.length)];
+  var lightNumbers = ["1", "2", "3", "5", "10", "11", "13", "14", "20", "32"];
+  var darkNumbers = ["16", "21", "22","33","38","42", "44", "45", "67", "79"];
+  var ranNumber;
+  if (characterPath === "light") {
+    ranNumber = lightNumbers[Math.floor(Math.random() * lightNumbers.length)];
+  } else {
+    ranNumber = darkNumbers[Math.floor(Math.random() * darkNumbers.length)];
+  }
+
   console.log(ranNumber);
 
   var homeWorldLink;
@@ -79,8 +88,6 @@ async function genRandomCharacter() {
 
   fetchHomeWorld();
 }
-
-
 
 // async function fetchHomeWorld() {
 //   console.log(homeWorldLink);
