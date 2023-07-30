@@ -6,7 +6,7 @@ const initLocationsStep = function () {
 
   var addLocationBtn = document.getElementById("add-btn");
   addLocationBtn.addEventListener("click", getLocation);
-  var resetLocationBtn = document.getElementById("reset-character-btn");
+  var resetLocationBtn = document.getElementById("reset-location-btn");
   resetLocationBtn.addEventListener("click",resetLoc);
 };
 
