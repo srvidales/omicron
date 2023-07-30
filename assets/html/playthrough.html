@@ -1,33 +1,37 @@
-    <div class="container">
-      <div class="tile is-ancestor is-centered">
-        <div class="tile is-vertical is-2"></div>
-          <div class="tile is-vertical is-8">
+<div class="container">
+  <div class="tile is-ancestor is-centered">
+    <div class="tile is-vertical is-2"></div>
 
+      <div class="tile is-vertical is-8">
+        <div class="columns">
+        </div>
 
-            <!-- For the div below:
-            What is the API needing to pull through. I was creating a class with “title-a, subtitle-b, and paragraph-c” to mark the different descriptions of the text the user will read. Do you want me to make these ID tags instead? Or is the API needing something entirely different?-->
-            <div class="tile is-parent">
-              <article class="tile is-child notification is-dark">
-                <p class="title playthrough-title-a">Playthrough</p>
-                <p class="subtitle playthrough-subtitle-b">Lorem ipsum dolor sit amet.</p>
-                <p class="playthrough-paragraph-c">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quae debitis dignissimos error ab sapiente unde nostrum inventore deleniti deserunt tempora natus architecto, esse labore fuga assumenda tempore eveniet adipisci odit expedita placeat dolor aspernatur quas atque? Consectetur a reprehenderit ab dolores quos magni laudantium ratione, quod nesciunt sequi exercitationem?</p>
-              </article>
-            </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-dark">
+            <p class="title playthrough" id="title-heading">Playthrough</p>
+            <p class="playthrough" id="title-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quae debitis dignissimos error ab sapiente unde nostrum inventore deleniti deserunt tempora natus architecto, esse labore fuga assumenda tempore eveniet adipisci odit expedita placeat dolor aspernatur quas atque? Consectetur a reprehenderit ab dolores quos magni laudantium ratione, quod nesciunt sequi exercitationem?</p>
+          </article>
+        </div>
 
-            <div class="tile">
-              <div class="tile is-parent">
-              </div>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child is-black has-text-centered">
-                <a class ="button is-white is-rounded is-focused" id="choice-a">Choice A</a>
-              </article>
-              <article class="tile is-child is-black has-text-centered">
-                <a class="button is-white is-rounded is-focused" id="choice-b">Choice B</a>
-              </article>
-            </div>
+        <div class="tile">
+          <div class="tile is-parent"></div>
+        </div>
 
-          </div>
-        <div class="tile is-vertical is-2"></div>
+        <div class="tile is-parent">
+          <article class="tile is-child is-black has-text-centered">
+            <a class ="button is-white is-rounded is-focused" id="choice-a-btn">Choice A</a>
+          </article>
+          <article class="tile is-child is-black has-text-centered">
+            <a class="button is-white is-rounded is-focused" id="choice-b-btn">Choice B</a>
+          </article>
+        </div>
+        
+        <div class="tile is-parent">
+          <article class="tile is-child is-dark has-text-centered">
+            <a class="button is-primary is-rounded is-focused" id="returntointro-btn">Embark on Another Galactic Story</a>
+          </article>
+        </div>
       </div>
+    <div class="tile is-vertical is-2"></div>
   </div>
+</div>
