@@ -75,6 +75,6 @@ function resetLoc (event){
   populations.textContent = ""
   var rotations = document.getElementById("txt-rotation");
   rotations.textContent = ""
-}}
+}};
 
 export { initLocationsStep };
