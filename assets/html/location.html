@@ -1,6 +1,54 @@
-<section>
-  <img src="/assets/img/location/location-right.png" alt="location-right">
-  <h1>Locations</h1>
-  <button id="add-btn">Add Location</button>
-  <button id="continue-btn">Continue</button>
-</section>
+<div class="container">
+    <div class="tile is-ancestor is-centered">
+        <div class="tile is-vertical is-2"></div>
+        <div class="tile is-vertical is-8">
+            <div class="tile is-parent mt-5">
+                <article class="tile is-child notification is-black has-text-centered">
+                    <img src="/Users/leeocherry/bootcamp/projects/omicron/assets/img/banner/location-banner.png"
+                        alt="banner">
+                </article>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-black has-text-centered">
+                    <h1 class="title has-text-centered">
+                        Which Adventure Will You Choose
+                    </h1>
+                    <p class="subtitle has-text-centered">
+                        In a galaxy far far away...?
+                    </p>
+                </article>
+            </div>
+            <div class="tile">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-dark">
+                        <p class="title">Planet information</p>
+                        <p class="subtitle" id="txt-planetname">
+                            <span id="txt-rotation"></span>
+                            <span id="txt-terrain"></span>
+                            <span id="txt-climate"></span>
+                            <span id="txt-pop"></span>
+                            <span id="txt-orbitalp"></span>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-light">
+                        <p class="title">Image</p>
+                        <p class="subtitle">With an image</p>
+                        <figure class="image is-4by3" id="img-location">
+                            <img src="https://bulma.io/images/placeholders/640x480.png">
+                        </figure>
+                    </article>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child is-black has-text-centered">
+                    <a class="button is-rounded is-warning p-5 my-0" id="add-location-btn">
+                        Add Location</a>
+                </article>
+                <article class="tile is-child is-black has-text-centered">
+                    <a class="button is-warning is-rounded p-5 my-0 " id="continue-btn">Continue</a>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
