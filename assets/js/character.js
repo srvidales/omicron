@@ -6,8 +6,8 @@ const initCharacterStep = function () {
 
   var randomCharacterBtn = document.getElementById("add-character-btn");
   randomCharacterBtn.addEventListener("click", genRandomCharacter);
-  var resetCharacterBtn = document.getElementById("reset-character-btn");
-  resetCharacterBtn.addEventListener("click",resetChar);
+ 
+  genRandomCharacter();
 };
 
 // var homeWorldLink;
@@ -80,22 +80,7 @@ async function genRandomCharacter() {
   fetchHomeWorld();
 }
 
-function resetChar (event){
-  if (event){
-    var names = document.getElementById("txt-name");
-  names.textContent = ""
-  var eyes = document.getElementById(" txt-eyeColor");
-  eyes.textContent = ""
-  var genders = document.getElementById("txt-gender");
-  genders.textContent = ""
-  var hair = document.getElementById("txt-hairColor");
-  hair.textContent = ""
-  var heights = document.getElementById("txt-height");
-  heights.textContent = ""
-  var placeOfBirth = document.getElementById("txt-birthPlace");
-    placeOfBirth.textContent = ""
-  }
-};
+
 
 // async function fetchHomeWorld() {
 //   console.log(homeWorldLink);

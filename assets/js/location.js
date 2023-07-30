@@ -6,8 +6,8 @@ const initLocationsStep = function () {
 
   var addLocationBtn = document.getElementById("add-btn");
   addLocationBtn.addEventListener("click", getLocation);
-  var resetLocationBtn = document.getElementById("reset-location-btn");
-  resetLocationBtn.addEventListener("click",resetLoc);
+
+  getLocation();
 };
 
 
@@ -61,20 +61,6 @@ async function getLocation() {
   rotations.textContent = locationArray[5];
 }
 
-function resetLoc (event){
-  if(event){
-  var names = document.getElementById("txt-planetname");
-  names.textContent = ""
-  var climates = document.getElementById("txt-climate");
-  climates.textContent = ""
-  var diameters = document.getElementById("txt-diameter");
-  diameters.textContent = ""
-  var terrains = document.getElementById("txt-terrain");
-  terrains.textContent = ""
-  var populations = document.getElementById("txt-pop");
-  populations.textContent = ""
-  var rotations = document.getElementById("txt-rotation");
-  rotations.textContent = ""
-}};
+
 
 export { initLocationsStep };
