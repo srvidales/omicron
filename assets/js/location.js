@@ -6,7 +6,10 @@ const initLocationsStep = function () {
 
   var addLocationBtn = document.getElementById("add-btn");
   addLocationBtn.addEventListener("click", getLocation);
+  var resetLocationBtn = document.getElementById("reset-location-btn");
+  resetLocationBtn.addEventListener("click",resetLoc);
 };
+
 
 async function getLocation() {
   var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
@@ -44,18 +47,34 @@ async function getLocation() {
   locationArray.push(population);
   locationArray.push(rotation);
 
-  var names = document.getElementById("locationName");
+  var names = document.getElementById("txt-planetname");
   names.textContent = locationArray[0];
-  var climates = document.getElementById("climate");
+  var climates = document.getElementById("txt-climate");
   climates.textContent = locationArray[1];
-  var diameters = document.getElementById("diameter");
+  var diameters = document.getElementById("txt-diameter");
   diameters.textContent = locationArray[2];
-  var terrains = document.getElementById("terrain");
+  var terrains = document.getElementById("txt-terrain");
   terrains.textContent = locationArray[3];
-  var populations = document.getElementById("population");
+  var populations = document.getElementById("txt-pop");
   populations.textContent = locationArray[4];
-  var rotations = document.getElementById("rotation");
+  var rotations = document.getElementById("txt-rotation");
   rotations.textContent = locationArray[5];
 }
+
+function resetLoc (event){
+  if(event){
+  var names = document.getElementById("txt-planetname");
+  names.textContent = ""
+  var climates = document.getElementById("txt-climate");
+  climates.textContent = ""
+  var diameters = document.getElementById("txt-diameter");
+  diameters.textContent = ""
+  var terrains = document.getElementById("txt-terrain");
+  terrains.textContent = ""
+  var populations = document.getElementById("txt-pop");
+  populations.textContent = ""
+  var rotations = document.getElementById("txt-rotation");
+  rotations.textContent = ""
+}}
 
 export { initLocationsStep };

@@ -6,6 +6,8 @@ const initCharacterStep = function () {
 
   var randomCharacterBtn = document.getElementById("add-character-btn");
   randomCharacterBtn.addEventListener("click", genRandomCharacter);
+  var resetCharacterBtn = document.getElementById("reset-character-btn");
+  resetCharacterBtn.addEventListener("click",resetChar);
 };
 
 // var homeWorldLink;
@@ -50,15 +52,15 @@ async function genRandomCharacter() {
   characterDataArray.push(hairColor);
   characterDataArray.push(height);
 
-  var names = document.getElementById("name");
+  var names = document.getElementById("txt-name");
   names.textContent = characterDataArray[0];
-  var eyes = document.getElementById("eyeColor");
+  var eyes = document.getElementById(" txt-eyeColor");
   eyes.textContent = characterDataArray[1];
-  var genders = document.getElementById("gender");
+  var genders = document.getElementById("txt-gender");
   genders.textContent = characterDataArray[2];
-  var hair = document.getElementById("hairColor");
+  var hair = document.getElementById("txt-hairColor");
   hair.textContent = characterDataArray[3];
-  var heights = document.getElementById("height");
+  var heights = document.getElementById("txt-height");
   heights.textContent = characterDataArray[4];
 
   async function fetchHomeWorld() {
@@ -71,12 +73,29 @@ async function genRandomCharacter() {
 
     characterDataArray.push(birthPlace);
 
-    var placeOfBirth = document.getElementById("birthPlace");
+    var placeOfBirth = document.getElementById("txt-birthPlace");
     placeOfBirth.textContent = characterDataArray[5];
   }
 
   fetchHomeWorld();
 }
+
+function resetChar (event){
+  if (event){
+    var names = document.getElementById("txt-name");
+  names.textContent = ""
+  var eyes = document.getElementById(" txt-eyeColor");
+  eyes.textContent = ""
+  var genders = document.getElementById("txt-gender");
+  genders.textContent = ""
+  var hair = document.getElementById("txt-hairColor");
+  hair.textContent = ""
+  var heights = document.getElementById("txt-height");
+  heights.textContent = ""
+  var placeOfBirth = document.getElementById("txt-birthPlace");
+    placeOfBirth.textContent = ""
+  }
+};
 
 // async function fetchHomeWorld() {
 //   console.log(homeWorldLink);
