@@ -61,7 +61,8 @@ async function getLocation() {
   rotations.textContent = locationArray[5];
 }
 
-function resetLoc (){
+function resetLoc (event){
+  if(event){
   var names = document.getElementById("txt-planetname");
   names.textContent = ""
   var climates = document.getElementById("txt-climate");
@@ -74,6 +75,6 @@ function resetLoc (){
   populations.textContent = ""
   var rotations = document.getElementById("txt-rotation");
   rotations.textContent = ""
-}
+}}
 
 export { initLocationsStep };
