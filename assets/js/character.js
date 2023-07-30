@@ -63,7 +63,7 @@ async function genRandomCharacter() {
 
   var names = document.getElementById("txt-name");
   names.textContent = characterDataArray[0];
-  var eyes = document.getElementById(" txt-eyeColor");
+  var eyes = document.getElementById("txt-eyeColor");
   eyes.textContent = characterDataArray[1];
   var genders = document.getElementById("txt-gender");
   genders.textContent = characterDataArray[2];
