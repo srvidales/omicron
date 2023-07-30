@@ -1,74 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Playthrough Choices</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  </head>
+<div class="container">
+  <div class="tile is-ancestor is-centered">
+    <div class="tile is-vertical is-2"></div>
 
-<body class="has-background-grey-dark">
-  <main>
-    <div class="container">
-      <div class="tile is-ancestor is-centered">
-        <div class="tile is-vertical is-2"></div>
+      <div class="tile is-vertical is-8">
+        <div class="columns">
+        </div>
 
-          <div class="tile is-vertical is-8">
-            <div class="tile is-parent mt-5">
-              <article class="tile is-child notification is-black has-text-centered">
-                Banner
-              </article>
-            </div>
-            <nav class="level">
-              <p class="level-item has-text-centered">
-                <a class="link is-info">Home</a>
-              </p>
-              <p class="level-item has-text-centered">
-                <a class="link is-info">Dark Side // Light Side</a>
-              </p>
-              <p class="level-item has-text-centered">
-                <a class="link is-info">Character</a>
-              </p>
-              <p class="level-item has-text-centered">
-                <a class="link is-info">Location</a>
-              </p>
-              <p class="level-item has-text-centered">
-                <a class="link is-info">Playthrough</a>
-              </p>
-              <p class="level-item has-text-centered">
-                <a class="link is-info">Finale</a>
-              </p>
-            </nav>
-            
-            <div class="tile is-parent">
-              <article class="tile is-child notification is-dark">
-                <p class="title playthrough-title-a">Playthrough</p>
-                <p class="subtitle playthrough-subtitle-b">Lorem ipsum dolor sit amet.</p>
-                <p class="playthrough-paragraph-c">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quae debitis dignissimos error ab sapiente unde nostrum inventore deleniti deserunt tempora natus architecto, esse labore fuga assumenda tempore eveniet adipisci odit expedita placeat dolor aspernatur quas atque? Consectetur a reprehenderit ab dolores quos magni laudantium ratione, quod nesciunt sequi exercitationem?</p>
-              </article>
-            </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-dark">
+            <p class="title playthrough" id="title-heading">Playthrough</p>
+            <p class="playthrough" id="title-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quae debitis dignissimos error ab sapiente unde nostrum inventore deleniti deserunt tempora natus architecto, esse labore fuga assumenda tempore eveniet adipisci odit expedita placeat dolor aspernatur quas atque? Consectetur a reprehenderit ab dolores quos magni laudantium ratione, quod nesciunt sequi exercitationem?</p>
+          </article>
+        </div>
 
-            <div class="tile is-parent columns">
-              <div class="column is-full">
+        <div class="tile">
+          <div class="tile is-parent"></div>
+        </div>
 
-                  <div class="column">
-                    <article class="tile is-child  is-dark has-text-centered" >
-                      <a class ="button is-white is-rounded is-focused choice-a"">Choice A</a>
-
-                      <!-- I'm having issues pushing the buttons to the left and right side. -->
-
-                      <a class="button is-white is-rounded is-focused choice-a">Choice B</a>
-                    </article>
-                  </div>
-              </div>
-            </div>
-
-          </div>
-        <div class="tile is-vertical is-2"></div>
+        <div class="tile is-parent">
+          <article class="tile is-child is-black has-text-centered">
+            <a class ="button is-white is-rounded is-focused" id="choice-a-btn">Choice A</a>
+          </article>
+          <article class="tile is-child is-black has-text-centered">
+            <a class="button is-white is-rounded is-focused" id="choice-b-btn">Choice B</a>
+          </article>
+        </div>
+        
+        <div class="tile is-parent">
+          <article class="tile is-child is-dark has-text-centered">
+            <a class="button is-primary is-rounded is-focused" id="returntointro-btn">Embark on Another Galactic Story</a>
+          </article>
+        </div>
       </div>
-      </div>
-    </main>
-  </body>
-  <script></script>
-</html>
+    <div class="tile is-vertical is-2"></div>
+  </div>
+</div>

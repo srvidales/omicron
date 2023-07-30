@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/css/bulma.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.js"
-            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-    <script type="module" src="assets/js/app.js"></script>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="assets/css/bulma.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+  <script type="module" src="assets/js/app.js"></script>
 </head>
 <header>
-    <img id="banner-img" src="assets/img/banner/intro-banner.png" alt="intro-banner">
+  <article class="tile is-child notification is-black has-text-centered">
+  <img src="/assets/img/banner/index-banner.jpg" alt="banner">
+  </article>
+
+  <nav class="level mt-5 mb-2 breadcrumb is-medium" aria-label="breadcrumbs">
+    <p class="level-item has-text-centered is-active">
+      <a class="link is-info" aria-current="page">Home</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a class="link is-info">Dark Side // Light Side</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a class="link is-info">Character</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a class="link is-info">Location</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a class="link is-info">Playthrough</a>
+    </p>
+    <!-- <p class="level-item has-text-centered">
+      <a class="link is-info">Finale</a>
+    </p> -->
+  </nav>
+
 </header>
+
 <body class="has-background-grey-dark">
-    <main>
-<div id="intro-div"></div>
-<div id="difficulty-div" class="is-hidden"></div>
-<div id="character-div" class="is-hidden"></div>
-<div id="location-div" class="is-hidden"></div>
-<div id="path-div" class="is-hidden"></div>
-<div id="playthrough-div" class="is-hidden"></div>
-<div id="finale-div" class="is-hidden"></div>
-    </main>
+  <main>
+    <div id="intro-div"></div>
+    <div id="difficulty-div" class="is-hidden"></div>
+    <div id="character-div" class="is-hidden"></div>
+    <div id="location-div" class="is-hidden"></div>
+    <div id="path-div" class="is-hidden"></div>
+    <div id="playthrough-div" class="is-hidden"></div>
+    <div id="finale-div" class="is-hidden"></div>
+  </main>
 </body>
+
 </html>
