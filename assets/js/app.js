@@ -1,10 +1,9 @@
 import * as intro from './intro.js';
-// import * as difficulty from './difficulty.js';
 import * as character from './character.js';
 import * as location from './location.js';
 import * as path from './path.js';
 import * as playthrough from './playthrough.js';
-import * as finale from './finale.js';
+
 
 // Step 1 - Introduction
 // Step 2 - Select story difficulty
@@ -41,12 +40,11 @@ $(function () {
 
     const loadAllSteps = function () {
         $('#intro-div').load('./assets/html/intro.html', intro.initIntroStep)
-        // $('#difficulty-div').load('./assets/html/difficulty.html', difficulty.initDifficultyStep)
         $('#path-div').load('./assets/html/path.html', path.initPathStep)
         $('#character-div').load('./assets/html/character.html', character.initCharacterStep)
         $('#location-div').load('./assets/html/location.html', location.initLocationsStep)
         $('#playthrough-div').load('./assets/html/playthrough.html', playthrough.initPlaythroughStep)
-        // $('#finale-div').load('./assets/html/finale.html', finale.initFinaleStep)
+       
     }
 
     const startApp = function () {
