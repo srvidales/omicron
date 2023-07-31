@@ -1,4 +1,4 @@
-import { nextStep } from "./app.js";
+import {nextStep, settings} from "./app.js";
 
 const initLocationsStep = function () {
   console.log("Done loading Location step.");
@@ -7,8 +7,12 @@ const initLocationsStep = function () {
   var addLocationBtn = document.getElementById("add-btn");
   addLocationBtn.addEventListener("click", getLocation);
 
-  getLocation();
+
 };
+
+const doWork = function() {
+  getLocation();
+}
 
 
 async function getLocation() {
@@ -30,6 +34,7 @@ async function getLocation() {
 
   console.log(data);
   name = data.name;
+  settings['location']['name'] = name;
   climate = data.climate;
   console.log(climate);
   diameter = data.diameter;
@@ -63,4 +68,4 @@ async function getLocation() {
 
 
 
-export { initLocationsStep };
+export { initLocationsStep, doWork };
