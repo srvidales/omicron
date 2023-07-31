@@ -4,7 +4,6 @@ import * as location from './location.js';
 import * as path from './path.js';
 import * as playthrough from './playthrough.js';
 
-
 // Step 1 - Introduction
 // Step 2 - Select story difficulty
 // Step 3 - Select your character out of a predefined set of characters
@@ -23,7 +22,7 @@ const Path = {
 
 let currentStep = 0;
 
-let settings = {};
+let settings = { character: { name: null }, location: { name: null } };
 
 const nextStep = function () {
     console.log(currentStep)
@@ -39,6 +38,18 @@ const nextStep = function () {
     bannerImg.attr('src', `/assets/img/banner/${steps[currentStep]}-banner.png`)
     div = `#${steps[currentStep]}-div`
     $(div).toggleClass('is-hidden');
+
+    switch (currentStep) {
+        case 2:
+            character.doWork();
+            break;
+        case 3:
+            location.doWork();
+            break;
+        case 4:
+            playthrough.doWork();
+    }
+
 }
 
 $(function () {
@@ -51,7 +62,6 @@ $(function () {
         $('#character-div').load('./assets/html/character.html', character.initCharacterStep)
         $('#location-div').load('./assets/html/location.html', location.initLocationsStep)
         $('#playthrough-div').load('./assets/html/playthrough.html', playthrough.initPlaythroughStep)
-
     }
 
     const startApp = function () {
