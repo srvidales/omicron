@@ -25,9 +25,11 @@ const doStep = function () {
         "messages": [
             {
                 "role": "user",
-                "content": "Generate 10 chapter names for a Star Wars novel with " + settings.character.name +
+                "content": "Pretend you are a sci-fi writer. " +
+                    "Generate 10 chapter names for a Star Wars novel with " + settings.character.name +
                     " as the main protagonist. Include " + settings.location.name + " as one of the locations. " +
-                    "Add 5 light-side and 5 dark-side supporting characters. " +
+                    "Add 5 light-side supporting characters. " +
+                    "Add 5 dark-side supporting characters." +
                     "Return chapterNames array using JSON."
             }
         ],
