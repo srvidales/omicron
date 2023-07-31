@@ -12,8 +12,8 @@ import * as playthrough from './playthrough.js';
 // Step 6 - Playthrough generated story
 // Step 7 - Finale (Success/Failure)
 
-const steps = ['intro', 'path', 'character', 'location',
-    'playthrough']
+const steps = ['intro', 'path', 'character', 'location', 'playthrough'];
+const modules = [intro, path, character, location, playthrough];
 
 const Path = {
     Light: 'light',
@@ -39,15 +39,12 @@ const nextStep = function () {
     div = `#${steps[currentStep]}-div`
     $(div).toggleClass('is-hidden');
 
-    switch (currentStep) {
-        case 2:
-            character.doWork();
-            break;
-        case 3:
-            location.doWork();
-            break;
-        case 4:
-            playthrough.doWork();
+    const foo = character;
+
+    console.log('module=', modules[currentStep]);
+
+    if (typeof modules[currentStep].doStep === 'function') {
+        modules[currentStep].doStep()
     }
 
 }

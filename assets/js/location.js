@@ -10,7 +10,7 @@ const initLocationsStep = function () {
 
 };
 
-const doWork = function() {
+const doStep = function() {
   getLocation();
 }
 
@@ -74,4 +74,4 @@ async function getLocation() {
 
 
 
-export { initLocationsStep, doWork };
+export { initLocationsStep, doStep };

@@ -8,7 +8,7 @@ const initPlaythroughStep = function () {
     $('#playthrough-div #choice-2').on('click', handleChoice)
 }
 
-const doWork = function () {
+const doStep = function () {
     const modal = $('#main-modal');
     $('#modal-txt').text('Loading chapter titles...');
     modal.toggle('is-active');
@@ -115,4 +115,4 @@ const addChapterButtons = function (content) {
 
 }
 
-export {initPlaythroughStep, doWork};
+export {initPlaythroughStep, doStep};

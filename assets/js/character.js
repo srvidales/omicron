@@ -8,7 +8,7 @@ const initCharacterStep = function () {
   randomCharacterBtn.addEventListener("click", genRandomCharacter);
 };
 
-const doWork = function () {
+const doStep = function () {
   genRandomCharacter();
 }
 
@@ -105,4 +105,4 @@ async function genRandomCharacter() {
 //   return data;
 // }
 
-export { initCharacterStep, doWork };
+export { initCharacterStep, doStep };
