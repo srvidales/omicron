@@ -41,9 +41,9 @@ const doWork = function () {
         console.log('data', data);
         console.log(chapterNames);
         addChapterButtons(chapterNames);
+        modal.toggle('is-active');
     })
 
-    modal.toggle('is-active');
 }
 
 const handleChoice = function () {
@@ -93,9 +93,9 @@ const clickEventHandler = function (event) {
         event.target.disabled = false;
         chat.messages.pop();
         console.log(chat);
+        modal.toggle('is-active');
     });
 
-    modal.toggle('is-active');
 }
 
 const addChapterButtons = function (content) {
