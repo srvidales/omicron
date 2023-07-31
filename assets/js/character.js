@@ -1,6 +1,4 @@
-import { nextStep } from "./app.js";
-
-let characterPath = "light";
+import {nextStep, Path, settings} from "./app.js";
 
 const initCharacterStep = function () {
   console.log("Done loading Character step.");
@@ -8,9 +6,11 @@ const initCharacterStep = function () {
 
   var randomCharacterBtn = document.getElementById("add-character-btn");
   randomCharacterBtn.addEventListener("click", genRandomCharacter);
-
-  genRandomCharacter();
 };
+
+const doStep = function () {
+  genRandomCharacter();
+}
 
 // var homeWorldLink;
 // var birthPlace;
@@ -20,10 +20,14 @@ const initCharacterStep = function () {
 // var height;
 
 async function genRandomCharacter() {
+  const modal = $('#main-modal');
+  $('#modal-txt').text('Loading character data...');
+  modal.toggle('is-active');
+
   var lightNumbers = ["1", "2", "3", "5", "10", "13", "14", "20", "32", "51"];
   var darkNumbers = ["11","16", "21", "22","33","38","44", "45", "67", "79"];
   var ranNumber;
-  if (characterPath === "light") {
+  if (settings.character.path === Path.Light) {
     ranNumber = lightNumbers[Math.floor(Math.random() * lightNumbers.length)];
   } else {
     ranNumber = darkNumbers[Math.floor(Math.random() * darkNumbers.length)];
@@ -45,6 +49,7 @@ async function genRandomCharacter() {
   let data = await response.json();
   homeWorldLink = data.homeworld;
   name = data.name;
+  settings.character.name = name;
   eyeColor = data.eye_color;
   gender = data.gender;
   hairColor = data.hair_color;
@@ -79,11 +84,12 @@ async function genRandomCharacter() {
     console.log(data);
     birthPlace = data.name;
     console.log(birthPlace);
-
-    characterDataArray.push(birthPlace);
+        characterDataArray.push(birthPlace);
 
     var placeOfBirth = document.getElementById("txt-birthPlace");
     placeOfBirth.textContent = characterDataArray[5];
+    modal.toggle('is-active');
+
   }
 
   fetchHomeWorld();
@@ -99,4 +105,4 @@ async function genRandomCharacter() {
 //   return data;
 // }
 
-export { initCharacterStep };
+export { initCharacterStep, doStep };
