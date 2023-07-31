@@ -27,6 +27,7 @@ const doWork = function () {
                 "role": "user",
                 "content": "Generate 10 chapter names for a Star Wars novel with " + settings.character.name +
                     " as the main protagonist. Include " + settings.location.name + " as one of the locations. " +
+                    "Add 5 light-side and 5 dark-side supporting characters. " +
                     "Return chapterNames array using JSON."
             }
         ],
@@ -67,10 +68,13 @@ const talk = async function () {
 }
 
 const clickEventHandler = function (event) {
+    const loadingText = 'Loading chapter data...';
     console.log(event.target);
 
     const modal = $('#main-modal');
-    $('#modal-txt').text('Loading chapter data...');
+    $('#modal-txt').text(loadingText);
+    const titleHeading = $('#title-heading');
+    titleHeading.text(loadingText);
     modal.toggle('is-active');
 
     event.target.disabled = true;
@@ -86,6 +90,7 @@ const clickEventHandler = function (event) {
     );
     talk().then(function (data) {
         console.log(data);
+        titleHeading.text(event.target.textContent);
         const content = data.choices[0].message.content
             .replace(/\n/g, '<br />');
         console.log(content);
