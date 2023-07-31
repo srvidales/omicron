@@ -70,7 +70,7 @@ const clickEventHandler = function (event) {
     console.log(event.target);
 
     const modal = $('#main-modal');
-    $('#modal-txt').text('Loading chapter titles...');
+    $('#modal-txt').text('Loading chapter data...');
     modal.toggle('is-active');
 
     event.target.disabled = true;
