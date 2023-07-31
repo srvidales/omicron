@@ -9,6 +9,10 @@ const initPlaythroughStep = function () {
 }
 
 const doWork = function () {
+    const modal = $('#main-modal');
+    $('#modal-txt').text('Loading chapter titles...');
+    modal.toggle('is-active');
+
     console.log(settings)
 
     if (localStorage.getItem('debug') != null) {
@@ -38,6 +42,8 @@ const doWork = function () {
         console.log(chapterNames);
         addChapterButtons(chapterNames);
     })
+
+    modal.toggle('is-active');
 }
 
 const handleChoice = function () {
@@ -62,6 +68,11 @@ const talk = async function () {
 
 const clickEventHandler = function (event) {
     console.log(event.target);
+
+    const modal = $('#main-modal');
+    $('#modal-txt').text('Loading chapter titles...');
+    modal.toggle('is-active');
+
     event.target.disabled = true;
     const storyTextArea = $('#title-paragraph');
     storyTextArea.text('Loading...');
@@ -83,6 +94,8 @@ const clickEventHandler = function (event) {
         chat.messages.pop();
         console.log(chat);
     });
+
+    modal.toggle('is-active');
 }
 
 const addChapterButtons = function (content) {

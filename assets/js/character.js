@@ -20,6 +20,10 @@ const doWork = function () {
 // var height;
 
 async function genRandomCharacter() {
+  const modal = $('#main-modal');
+  $('#modal-txt').text('Loading character data...');
+  modal.toggle('is-active');
+
   var lightNumbers = ["1", "2", "3", "5", "10", "13", "14", "20", "32", "51"];
   var darkNumbers = ["11","16", "21", "22","33","38","44", "45", "67", "79"];
   var ranNumber;
@@ -84,6 +88,8 @@ async function genRandomCharacter() {
 
     var placeOfBirth = document.getElementById("txt-birthPlace");
     placeOfBirth.textContent = characterDataArray[5];
+    modal.toggle('is-active');
+
   }
 
   fetchHomeWorld();
