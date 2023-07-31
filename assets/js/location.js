@@ -10,12 +10,16 @@ const initLocationsStep = function () {
 
 };
 
-const doWork = function() {
+const doStep = function() {
   getLocation();
 }
 
 
 async function getLocation() {
+  const modal = $('#main-modal');
+  $('#modal-txt').text('Loading location data...');
+  modal.toggle('is-active');
+
   var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   var ranNumber = number[Math.floor(Math.random() * number.length)];
   console.log(ranNumber);
@@ -64,8 +68,10 @@ async function getLocation() {
   populations.textContent = locationArray[4];
   var rotations = document.getElementById("txt-rotation");
   rotations.textContent = locationArray[5];
+
+  modal.toggle('is-active');
 }
 
 
 
-export { initLocationsStep, doWork };
+export { initLocationsStep, doStep };

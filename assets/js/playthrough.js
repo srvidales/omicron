@@ -8,7 +8,11 @@ const initPlaythroughStep = function () {
     $('#playthrough-div #choice-2').on('click', handleChoice)
 }
 
-const doWork = function () {
+const doStep = function () {
+    const modal = $('#main-modal');
+    $('#modal-txt').text('Loading chapter titles...');
+    modal.toggle('is-active');
+
     console.log(settings)
 
     if (localStorage.getItem('debug') != null) {
@@ -21,8 +25,11 @@ const doWork = function () {
         "messages": [
             {
                 "role": "user",
-                "content": "Generate 10 chapter names for a Star Wars novel with " + settings.character.name +
+                "content": "Pretend you are a sci-fi writer. " +
+                    "Generate 10 chapter names for a Star Wars novel with " + settings.character.name +
                     " as the main protagonist. Include " + settings.location.name + " as one of the locations. " +
+                    "Add 5 light-side supporting characters. " +
+                    "Add 5 dark-side supporting characters." +
                     "Return chapterNames array using JSON."
             }
         ],
@@ -37,7 +44,9 @@ const doWork = function () {
         console.log('data', data);
         console.log(chapterNames);
         addChapterButtons(chapterNames);
+        modal.toggle('is-active');
     })
+
 }
 
 const handleChoice = function () {
@@ -61,7 +70,15 @@ const talk = async function () {
 }
 
 const clickEventHandler = function (event) {
+    const loadingText = 'Loading chapter data...';
     console.log(event.target);
+
+    const modal = $('#main-modal');
+    $('#modal-txt').text(loadingText);
+    const titleHeading = $('#title-heading');
+    titleHeading.text(loadingText);
+    modal.toggle('is-active');
+
     event.target.disabled = true;
     const storyTextArea = $('#title-paragraph');
     storyTextArea.text('Loading...');
@@ -75,6 +92,7 @@ const clickEventHandler = function (event) {
     );
     talk().then(function (data) {
         console.log(data);
+        titleHeading.text(event.target.textContent);
         const content = data.choices[0].message.content
             .replace(/\n/g, '<br />');
         console.log(content);
@@ -82,7 +100,9 @@ const clickEventHandler = function (event) {
         event.target.disabled = false;
         chat.messages.pop();
         console.log(chat);
+        modal.toggle('is-active');
     });
+
 }
 
 const addChapterButtons = function (content) {
@@ -97,4 +117,4 @@ const addChapterButtons = function (content) {
 
 }
 
-export {initPlaythroughStep, doWork};
+export {initPlaythroughStep, doStep};
