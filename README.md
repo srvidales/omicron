@@ -12,6 +12,8 @@
 
 ## About
 
+This is a storytelling webapp where a user can choose their own starwars character, and with the aide of AI, create some fanfiction to add to the starwars universe. 
+
 ## Getting Started
 
 ```bash
@@ -40,3 +42,7 @@ In Alphabetical Order:
 - Kimberly Nguyen
 - Andre Taylor
 - Sergio Vidales Perez
+
+## Images: 
+- Several of the images are screenshots of a copyrighted television program. It is believed that screenshots may be exhibited under the fair use provision of United States copyright law.
+- Wallpaperflare is an open platform for users to share their favorite wallpapers, as all wallpapers in Wallpaperflare are derived from the network users to share. Several Background images were derived from this site. 
