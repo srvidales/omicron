@@ -6,6 +6,7 @@ const initDifficultyStep = function () {
     $('#hard-diff-btn').on('click', nextStep)
 
     settings['difficulty'] = Difficulty.Easy;
+    localStorage.setItem('settings', JSON.stringify(settings));
     console.log(settings);
 }
 

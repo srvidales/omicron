@@ -4,18 +4,9 @@ import * as character from './character.js';
 import * as location from './location.js';
 import * as path from './path.js';
 import * as playthrough from './playthrough.js';
-import {initLoadStoryStep} from "./loadstory.js";
 
-// Step 1 - Introduction
-// Step 2 - Select story difficulty
-// Step 3 - Select your character out of a predefined set of characters
-// Step 4 - Select your location out of a predefined set of locations
-// Step 5 - Select your path (light/dark)
-// Step 6 - Playthrough generated story
-// Step 7 - Finale (Success/Failure)
-
-const steps = ['intro', 'loadstory', 'path', 'character', 'location', 'playthrough'];
-const modules = [intro, loadStory, path, character, location, playthrough];
+const steps = ['intro', 'path', 'character', 'location', 'playthrough'];
+const modules = [intro, path, character, location, playthrough];
 
 const Path = {
     Light: 'light',
@@ -24,7 +15,7 @@ const Path = {
 
 let currentStep = 0;
 
-let settings = { character: { name: null }, location: { name: null } };
+let settings;
 
 const nextStep = function () {
     console.log('Before switch: ', steps[currentStep])
@@ -50,6 +41,31 @@ const nextStep = function () {
 
 }
 
+const goToStep = function (index) {
+    const bannerImg = $('#banner-img');
+
+    let div = `#${steps[currentStep]}-div`
+    $(div).toggleClass('is-hidden');
+
+    currentStep = index;
+
+    bannerImg.attr('src', `assets/img/banner/${steps[currentStep]}-banner.png`)
+    div = `#${steps[currentStep]}-div`
+    $(div).toggleClass('is-hidden');
+
+    if (typeof modules[currentStep].doStep === 'function') {
+        modules[currentStep].doStep()
+    }
+}
+
+const loadSettings = function() {
+    settings = JSON.parse(localStorage.getItem('settings'));
+}
+
+const initSettings = function() {
+    settings = { character: { path: null, name: null }, location: { name: null } };
+}
+
 $(function () {
 
     let currentStep = 0;
@@ -68,7 +84,14 @@ $(function () {
         loadAllSteps()
     }
 
+    loadSettings();
+
+    if (settings == null) {
+        initSettings();
+        localStorage.setItem('settings', JSON.stringify(settings));
+    }
+
     startApp();
 })
 
-export {Path, settings, currentStep, nextStep};
+export {Path, settings, currentStep, nextStep, goToStep, initSettings, loadSettings};

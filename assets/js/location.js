@@ -2,7 +2,7 @@ import {nextStep, settings} from "./app.js";
 
 const initLocationsStep = function () {
   console.log("Done loading Location step.");
-  $("#location-div #continue-btn").on("click", nextStep);
+  $("#location-div #continue-btn").on("click", continueButtonHandler);
 
   var addLocationBtn = document.getElementById("add-btn");
   addLocationBtn.addEventListener("click", getLocation);
@@ -12,6 +12,11 @@ const initLocationsStep = function () {
 
 const doStep = function() {
   getLocation();
+}
+
+const continueButtonHandler = function() {
+  localStorage.setItem('settings', JSON.stringify(settings));
+  nextStep();
 }
 
 

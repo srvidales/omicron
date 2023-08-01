@@ -1,11 +1,10 @@
-import {nextStep, settings} from './app.js';
+import {initSettings, loadSettings, nextStep, settings} from './app.js';
 
 let chat;
 
 const initPlaythroughStep = function () {
     console.log('Done loading Playthrough step.')
-    $('#playthrough-div #choice-1').on('click', handleChoice)
-    $('#playthrough-div #choice-2').on('click', handleChoice)
+    $('#returntointro-btn').on('click', returnButtonHandler)
 }
 
 const doStep = function () {
@@ -30,7 +29,7 @@ const doStep = function () {
                     " as the main protagonist. Include " + settings.location.name + " as one of the locations. " +
                     "Add 5 light-side supporting characters. " +
                     "Add 5 dark-side supporting characters." +
-                    "Return chapterNames array using JSON."
+                    "Return chapter names array using JSON."
             }
         ],
         "temperature": 0.7
@@ -49,9 +48,17 @@ const doStep = function () {
 
 }
 
-const handleChoice = function () {
-    console.log('Choice made.')
-    nextStep()
+const returnButtonHandler = function () {
+    console.log('Clear and restart.');
+    const div = $('#chapter-buttons-div');
+    div.empty();
+    const titleHeading = $('#title-heading');
+    titleHeading.text('Click chapter button.');
+    const storyTextArea = $('#title-paragraph');
+    storyTextArea.text('');
+    initSettings();
+    localStorage.setItem('settings', JSON.stringify(settings));
+    nextStep();
 }
 
 const talk = async function () {
