@@ -2,7 +2,7 @@ import {nextStep, Path, settings} from "./app.js";
 
 const initCharacterStep = function () {
   console.log("Done loading Character step.");
-  $("#character-div #continue-btn").on("click", nextStep);
+  $("#character-div #continue-btn").on("click", continueButtonHandler);
 
   var randomCharacterBtn = document.getElementById("add-character-btn");
   randomCharacterBtn.addEventListener("click", genRandomCharacter);
@@ -10,6 +10,11 @@ const initCharacterStep = function () {
 
 const doStep = function () {
   genRandomCharacter();
+}
+
+const continueButtonHandler = function () {
+  localStorage.setItem('settings', JSON.stringify(settings));
+  nextStep();
 }
 
 // var homeWorldLink;
