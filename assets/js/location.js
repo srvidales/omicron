@@ -23,7 +23,8 @@ async function getLocation() {
   var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   var ranNumber = number[Math.floor(Math.random() * number.length)];
   var locationImg = document.getElementById('locationpic');
-  locationImg.setAttribute('src','/assets/img/location/planet-'+ranNumber+'.png')
+  locationImg.setAttribute('src','/assets/img/location/planet-'+ranNumber+'.png');
+  
   console.log(ranNumber);
   var name;
   var climate;
