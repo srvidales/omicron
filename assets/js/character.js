@@ -31,10 +31,10 @@ async function genRandomCharacter() {
   console.log(imageEl);
   if (settings.character.path === Path.Light) {
     ranNumber = lightNumbers[Math.floor(Math.random() * lightNumbers.length)];
-    imageEl.setAttribute('src','/assets/img/character/light/character-'+ranNumber+'.png');
+    imageEl.setAttribute('src','assets/img/character/light/character-'+ranNumber+'.png');
   } else {
     ranNumber = darkNumbers[Math.floor(Math.random() * darkNumbers.length)];
-    imageEl.setAttribute('src','/assets/img/character/dark/character-'+ranNumber+'.png');
+    imageEl.setAttribute('src','assets/img/character/dark/character-'+ranNumber+'.png');
   }
 
   console.log(ranNumber);
