@@ -1,8 +1,10 @@
 import * as intro from './intro.js';
+import * as loadStory from './loadstory.js';
 import * as character from './character.js';
 import * as location from './location.js';
 import * as path from './path.js';
 import * as playthrough from './playthrough.js';
+import {initLoadStoryStep} from "./loadstory.js";
 
 // Step 1 - Introduction
 // Step 2 - Select story difficulty
@@ -12,8 +14,8 @@ import * as playthrough from './playthrough.js';
 // Step 6 - Playthrough generated story
 // Step 7 - Finale (Success/Failure)
 
-const steps = ['intro', 'path', 'character', 'location', 'playthrough'];
-const modules = [intro, path, character, location, playthrough];
+const steps = ['intro', 'loadstory', 'path', 'character', 'location', 'playthrough'];
+const modules = [intro, loadStory, path, character, location, playthrough];
 
 const Path = {
     Light: 'light',
@@ -25,7 +27,7 @@ let currentStep = 0;
 let settings = { character: { name: null }, location: { name: null } };
 
 const nextStep = function () {
-    console.log(currentStep)
+    console.log('Before switch: ', steps[currentStep])
     const bannerImg = $('#banner-img');
 
     let div = `#${steps[currentStep]}-div`
@@ -35,13 +37,12 @@ const nextStep = function () {
     } else {
         currentStep = 0;
     }
+
+    console.log('After switch: ', steps[currentStep])
+
     bannerImg.attr('src', `/assets/img/banner/${steps[currentStep]}-banner.png`)
     div = `#${steps[currentStep]}-div`
     $(div).toggleClass('is-hidden');
-
-    const foo = character;
-
-    console.log('module=', modules[currentStep]);
 
     if (typeof modules[currentStep].doStep === 'function') {
         modules[currentStep].doStep()
@@ -55,6 +56,7 @@ $(function () {
 
     const loadAllSteps = function () {
         $('#intro-div').load('./assets/html/intro.html', intro.initIntroStep)
+        $('#loadstory-div').load('./assets/html/loadstory.html', loadStory.initLoadStoryStep)
         $('#path-div').load('./assets/html/path.html', path.initPathStep)
         $('#character-div').load('./assets/html/character.html', character.initCharacterStep)
         $('#location-div').load('./assets/html/location.html', location.initLocationsStep)
