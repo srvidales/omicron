@@ -27,10 +27,14 @@ async function genRandomCharacter() {
   var lightNumbers = ["1", "2", "3", "5", "10", "13", "14", "20", "32", "51"];
   var darkNumbers = ["11","16", "21", "22","33","38","44", "45", "67", "79"];
   var ranNumber;
+  var imageEl = document.getElementById("characterpic");
+  console.log(imageEl);
   if (settings.character.path === Path.Light) {
     ranNumber = lightNumbers[Math.floor(Math.random() * lightNumbers.length)];
+    imageEl.setAttribute('src','/assets/img/character/light/character-'+ranNumber+'.png');
   } else {
     ranNumber = darkNumbers[Math.floor(Math.random() * darkNumbers.length)];
+    imageEl.setAttribute('src','/assets/img/character/dark/character-'+ranNumber+'.png');
   }
 
   console.log(ranNumber);
