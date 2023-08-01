@@ -40,7 +40,7 @@ const nextStep = function () {
 
     console.log('After switch: ', steps[currentStep])
 
-    bannerImg.attr('src', `/assets/img/banner/${steps[currentStep]}-banner.png`)
+    bannerImg.attr('src', `assets/img/banner/${steps[currentStep]}-banner.png`)
     div = `#${steps[currentStep]}-div`
     $(div).toggleClass('is-hidden');
 
@@ -55,12 +55,12 @@ $(function () {
     let currentStep = 0;
 
     const loadAllSteps = function () {
-        $('#intro-div').load('./assets/html/intro.html', intro.initIntroStep)
-        $('#loadstory-div').load('./assets/html/loadstory.html', loadStory.initLoadStoryStep)
-        $('#path-div').load('./assets/html/path.html', path.initPathStep)
-        $('#character-div').load('./assets/html/character.html', character.initCharacterStep)
-        $('#location-div').load('./assets/html/location.html', location.initLocationsStep)
-        $('#playthrough-div').load('./assets/html/playthrough.html', playthrough.initPlaythroughStep)
+        $('#intro-div').load('assets/html/intro.html', intro.initIntroStep)
+        $('#loadstory-div').load('assets/html/loadstory.html', loadStory.initLoadStoryStep)
+        $('#path-div').load('assets/html/path.html', path.initPathStep)
+        $('#character-div').load('assets/html/character.html', character.initCharacterStep)
+        $('#location-div').load('assets/html/location.html', location.initLocationsStep)
+        $('#playthrough-div').load('assets/html/playthrough.html', playthrough.initPlaythroughStep)
     }
 
     const startApp = function () {
