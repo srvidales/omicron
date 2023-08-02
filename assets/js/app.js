@@ -20,6 +20,9 @@ let settings;
 const nextStep = function () {
     console.log('Before switch: ', steps[currentStep])
     const bannerImg = $('#banner-img');
+    const navItems = $('nav ul').children();
+
+    navItems[currentStep].classList.toggle('is-active')
 
     let div = `#${steps[currentStep]}-div`
     $(div).toggleClass('is-hidden');
@@ -30,6 +33,7 @@ const nextStep = function () {
     }
 
     console.log('After switch: ', steps[currentStep])
+    navItems[currentStep].classList.toggle('is-active')
 
     bannerImg.attr('src', `assets/img/banner/${steps[currentStep]}-banner.png`)
     div = `#${steps[currentStep]}-div`
@@ -43,15 +47,18 @@ const nextStep = function () {
 
 const goToStep = function (index) {
     const bannerImg = $('#banner-img');
+    const navItems = $('nav ul').children();
 
     let div = `#${steps[currentStep]}-div`
     $(div).toggleClass('is-hidden');
+    navItems[currentStep].classList.toggle('is-active')
 
     currentStep = index;
 
     bannerImg.attr('src', `assets/img/banner/${steps[currentStep]}-banner.png`)
     div = `#${steps[currentStep]}-div`
     $(div).toggleClass('is-hidden');
+    navItems[currentStep].classList.toggle('is-active')
 
     if (typeof modules[currentStep].doStep === 'function') {
         modules[currentStep].doStep()
