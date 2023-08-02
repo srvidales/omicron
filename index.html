@@ -3,21 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Omicron: Star Wars</title>
   <link rel="stylesheet" href="assets/css/bulma.css">
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
     crossorigin="anonymous"></script>
   <script type="module" src="assets/js/app.js"></script>
 </head>
+
 <header>
   <article class="tile is-child notification is-black has-text-centered">
   <img id='banner-img' src="assets/img/banner/intro-banner.png" alt="banner">
   </article>
 
-  <nav class="level mt-5 mb-2 breadcrumb is-medium" aria-label="breadcrumbs">
-    <p class="level-item has-text-centered is-active">
+  <nav class="container is-centered block is-none mt-5 mb-2 breadcrumb is-medium" aria-label="breadcrumbs">
+    <ul>
+    <li class="level-item has-text-centered is-active">
       <a class="link is-info" aria-current="page">Home</a>
-    </p>
+    </li>
     <p class="level-item has-text-centered">
       <a class="link is-info">Dark Side // Light Side</a>
     </p>
@@ -30,11 +32,8 @@
     <p class="level-item has-text-centered">
       <a class="link is-info">Playthrough</a>
     </p>
-    <!-- <p class="level-item has-text-centered">
-      <a class="link is-info">Finale</a>
-    </p> -->
+  </ul>
   </nav>
-
 </header>
 
 <body class="has-background-grey-dark">
@@ -45,6 +44,8 @@
     <div id="path-div" class="is-hidden"></div>
     <div id="playthrough-div" class="is-hidden"></div>
     <div id="finale-div" class="is-hidden"></div>
+    
+
   </main>
 </body>
 
