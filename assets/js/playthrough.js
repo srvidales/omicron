@@ -29,7 +29,7 @@ const doStep = function () {
                     " as the main protagonist. Include " + settings.location.name + " as one of the locations. " +
                     "Add 5 light-side supporting characters. " +
                     "Add 5 dark-side supporting characters." +
-                    "Return chapter names array using JSON."
+                    "Return chapter names array using JSON using key 'chapterNames'."
             }
         ],
         "temperature": 0.7
