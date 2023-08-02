@@ -84,7 +84,7 @@ async function genRandomCharacter() {
   var hair = document.getElementById("txt-hairColor");
   hair.textContent = characterDataArray[3];
   var heights = document.getElementById("txt-height");
-  heights.textContent = characterDataArray[4];
+  heights.textContent = characterDataArray[4]+' cm';
 
   async function fetchHomeWorld() {
     console.log(homeWorldLink);
