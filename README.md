@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [About](#about)
+- [Webpage](#webpage)
 - [Getting Started](#getting-started)
 - [Installing](#installing)
 - [Usage](#usage)
@@ -13,6 +14,10 @@
 ## About
 
 This is a storytelling webapp where a user can choose their own starwars character, and with the aide of AI, create some fanfiction to add to the starwars universe. 
+
+## Webpage
+
+https://srvidales.github.io/omicron/
 
 ## Getting Started
 
